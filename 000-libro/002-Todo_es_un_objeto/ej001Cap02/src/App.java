@@ -19,5 +19,13 @@ public class App {
         System.out.println(x);
         //System.out.println(q);
         // puedo imprimir x pero no q porque esta fuera del 'scope'
+
+        DataOnly data = new DataOnly();
+        data.i = 47;
+        data.d = 1.1;
+        data.b = false;
+        System.out.println(data.i);
+        System.out.println(data.d);
+        System.out.println(data.b);
     }
 }
