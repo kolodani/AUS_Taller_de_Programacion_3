@@ -8,5 +8,16 @@ public class App {
         System.out.println(ch);
         char c = ch;
         System.out.println(c);
+
+        int x = 12;
+        {
+            int q = 96;
+            System.out.println(x);
+            System.out.println(q);
+            // puedo imprimir x y q
+        }
+        System.out.println(x);
+        //System.out.println(q);
+        // puedo imprimir x pero no q porque esta fuera del 'scope'
     }
 }
