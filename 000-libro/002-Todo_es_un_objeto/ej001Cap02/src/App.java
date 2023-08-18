@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, Daniel!");
@@ -43,5 +45,8 @@ public class App {
         System.out.println(st1.i);
         Incrementable.increment();
         System.out.println(st1.i);
+
+        System.out.println("Hello, it's: ");
+        System.out.println(new Date());
     }
 }
