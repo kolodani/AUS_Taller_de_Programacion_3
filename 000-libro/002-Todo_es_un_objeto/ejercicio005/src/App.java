@@ -1,8 +1,8 @@
 /*
- *  Ejercicio 4:
- *  Transforme los fragmentos de código DataOnly en un programa que se pueda com pilar y ejecutar.
- */
-
+ *  Ejercicio 5:
+ *  Modifique el ejercicio anterior de modo que los va lores de los datos en DataOnly se asignen e
+ *  impriman en main().
+*/
 public class App {
     public static void main(String[] args) throws Exception {
         DataOnly daOn = new DataOnly();
