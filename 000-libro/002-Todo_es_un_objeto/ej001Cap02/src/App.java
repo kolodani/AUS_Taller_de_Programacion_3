@@ -37,5 +37,11 @@ public class App {
         System.out.println(st2.i);
         StaticTest.i++;
         System.out.println(st1.i);
+
+        Incrementable sf = new Incrementable();
+        sf.increment();
+        System.out.println(st1.i);
+        Incrementable.increment();
+        System.out.println(st1.i);
     }
 }
