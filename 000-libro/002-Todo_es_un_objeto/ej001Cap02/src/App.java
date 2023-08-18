@@ -31,9 +31,11 @@ public class App {
         int ejemplo = data.storage("Daniel");
         System.out.println(ejemplo);
 
-        //StaticTest st1 = new StaticTest();
-        //StaticTest st2 = new StaticTest();
-        //System.out.println(st1.i);
-        //System.out.println(st2.i);
+        StaticTest st1 = new StaticTest();
+        StaticTest st2 = new StaticTest();
+        System.out.println(st1.i);
+        System.out.println(st2.i);
+        StaticTest.i++;
+        System.out.println(st1.i);
     }
 }
