@@ -27,5 +27,8 @@ public class App {
         System.out.println(data.i);
         System.out.println(data.d);
         System.out.println(data.b);
+
+        int ejemplo = data.storage("Daniel");
+        System.out.println(ejemplo);
     }
 }
