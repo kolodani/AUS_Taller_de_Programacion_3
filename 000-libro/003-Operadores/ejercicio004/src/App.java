@@ -1,3 +1,8 @@
+/*
+ *  Ejercicio 04:
+ *  Escriba un programa que calcule la velocidad utilizando una distancia constante y un tiempo constante.
+*/
+
 public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Calculo de velociadad");
