@@ -6,7 +6,6 @@ public class Counter {
     }
 
     public void dec() {
-        System.out.println("Un Monton de cosas");
         synchronized(this){
             counter--;
         }
