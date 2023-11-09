@@ -23,7 +23,7 @@ public class ReadFile {
         return path;
     }
 
-    public boolean aplicarAccion() {
+    public synchronized boolean aplicarAccion() {
         if (existeDirectorio()) {
             path.delete();
             return true;

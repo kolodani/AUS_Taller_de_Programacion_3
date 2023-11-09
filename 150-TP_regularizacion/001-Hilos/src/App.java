@@ -19,17 +19,30 @@ public class App {
         while (true) {
             File fileLeido = new File("/home/kolodani/bulk.txt");
             File fileErrores = new File("/home/kolodani/salida.log");
+            String[] lineas = new String[10];
+            int i = 0;
             try (BufferedReader br = new BufferedReader(new FileReader(fileLeido))) {
                 String line;
                 while ((line = br.readLine()) != null) {
-                    Hilo hilo = new Hilo(line, fileErrores);
+                    lineas[i] = line;
+                    if (i == 9 || line == null) {
+                        Hilo hilo = new Hilo(lineas, fileErrores);
+                        hilo.start();
+                        i = 0;
+                        lineas = new String[10];
+                    } else {
+                        i++;
+                    }
+                }
+                if (lineas[0] != null) {
+                    Hilo hilo = new Hilo(lineas, fileErrores);
                     hilo.start();
                 }
             } catch (IOException e) {
                 System.out.println("Error al leer el archivo");
             }
             try {
-                Thread.sleep(60000);
+                Thread.sleep(5000);
             } catch (InterruptedException e) {
                 System.out.println("Error al dormir el hilo");
             }
