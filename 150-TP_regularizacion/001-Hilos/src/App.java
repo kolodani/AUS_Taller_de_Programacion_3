@@ -9,30 +9,29 @@
  *  que no se pudieron borrar/crear anteponiendo una B/C.
 */
 
-import java.io.File;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
+import java.io.IOException;
 
 public class App {
-    public static void main(String[] args) throws Exception {
-        File fileLeido = new File("/home/kolodani/Documentos/PRUEBA/bulk.txt");
-        File fileErrores = new File("/home/kolodani/Documentos/PRUEBA/salida.log");
-        ReadFile linea;
-        try (BufferedReader br = new BufferedReader(new FileReader(fileLeido))) {
-            String line;
-            int i = 0;
-            while ((line = br.readLine()) != null && i < 10) {
-                linea = new ReadFile(line);
-                if (!linea.aplicarAccion()) {
-                    try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileErrores, true))) {
-                        bw.write("B/C " + line + "\n");
-                    } catch (Exception e) {
-                        System.out.println("Error al escribir en el archivo: " + fileErrores);
-                    }
+    public static void main(String[] args) {
+        while (true) {
+            File fileLeido = new File("/home/kolodani/bulk.txt");
+            File fileErrores = new File("/home/kolodani/salida.log");
+            try (BufferedReader br = new BufferedReader(new FileReader(fileLeido))) {
+                String line;
+                while ((line = br.readLine()) != null) {
+                    Hilo hilo = new Hilo(line, fileErrores);
+                    hilo.start();
                 }
-                i++;
+            } catch (IOException e) {
+                System.out.println("Error al leer el archivo");
+            }
+            try {
+                Thread.sleep(60000);
+            } catch (InterruptedException e) {
+                System.out.println("Error al dormir el hilo");
             }
         }
     }
