@@ -1,0 +1,3 @@
+interface Lethal {
+    void kill();
+}
