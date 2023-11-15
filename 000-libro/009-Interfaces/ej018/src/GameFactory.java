@@ -1,0 +1,3 @@
+interface GameFactory {
+    Game getGame();
+}
