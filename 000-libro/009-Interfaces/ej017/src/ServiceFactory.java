@@ -1,0 +1,3 @@
+interface ServiceFactory {
+    Service getService();
+}
