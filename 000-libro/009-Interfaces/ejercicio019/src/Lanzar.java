@@ -1,0 +1,3 @@
+interface Lanzar {
+    boolean evento();
+}
