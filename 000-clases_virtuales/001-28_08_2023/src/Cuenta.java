@@ -1,5 +1,6 @@
 public class Cuenta {
     private double saldo;
+    // definimos una constante, similar a una macro en C
     private static final int SALDO_INSUFICIENTE = -1;
     private static double dolar;
 

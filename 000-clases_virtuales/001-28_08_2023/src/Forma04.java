@@ -16,6 +16,7 @@ public class Forma04 {
         Forma04 f4 = new Forma04(7);
         System.out.println(f4.MAX);
         // el warning lo tira porque quiero acceser a algo de la clase a traves de una instancia
+        // hay que acceder desde la clase y no de la instancia porque es algo que es estatico(de la clase)
         System.out.println(f4.getI());
         Forma04 f4a = new Forma04(8);
         System.out.println(f4a.MAX);

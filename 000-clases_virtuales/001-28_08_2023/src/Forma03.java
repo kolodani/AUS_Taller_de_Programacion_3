@@ -1,6 +1,6 @@
 public class Forma03 {
     // int es un tipo primitivo
-    // Integer es un objeto
+    // Integer es una clase
     // costoso de inicializar
     private ObjetoSuperComplejo i;
     // No cuesta nada, rapido de inicializar
@@ -13,6 +13,7 @@ public class Forma03 {
     }
 
     public ObjetoSuperComplejo getI() {
+        // siempre la condicion del if es booleana en Java
         if(i == null){
             // inicializacion de i
             i = new ObjetoSuperComplejo();
@@ -23,5 +24,6 @@ public class Forma03 {
     public static void main(String[] args) {
         Forma03 f3 = new Forma03();
         System.out.println(f3.getI());
+        System.out.println(f3.pi);
     }
 }
