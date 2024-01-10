@@ -17,6 +17,8 @@ public class Carta {
         return numero + " de " + palo;
     }
 
+    // metodo sobreescrito de la clase object
+    // en vez de comparar referencias, quiero que compare palo y numero
     @Override
     public boolean equals(Object c) {
         if (c == null) {

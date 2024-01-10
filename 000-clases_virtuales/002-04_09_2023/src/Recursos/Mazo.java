@@ -4,6 +4,7 @@ public class Mazo {
     private Carta[] cartas;
     private int cant;
 
+    // es un constructor del mazo que crea las 48 cartas distintas al mazo
     public Mazo() {
         cant = 48;
         cartas = new Carta[cant];
@@ -15,6 +16,7 @@ public class Mazo {
         }
     }
 
+    // saca una carta al azar hasta que el mazo no tiene cartas
     public Carta getCarta() {
         if (cant == 0){
             return null;
