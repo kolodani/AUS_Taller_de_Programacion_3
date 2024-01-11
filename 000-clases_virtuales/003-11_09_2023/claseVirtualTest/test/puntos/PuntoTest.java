@@ -3,42 +3,44 @@ package puntos;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
 
 class PuntoTest {
+	
+	private Punto p;
+	private Punto p2;
+	private Punto p3;
+	
+	@BeforeEach
+	void init () {
+		p = new Punto();
+		p2 = new Punto(3, 5);
+		p3 = new Punto(4, 3);
+	}
 
 	@Test
 	void testNewPointInZeroX() {
-		// Arrange
-		Punto p = new Punto();
-		// Act
-		int x = p.getX();
-		// Assert
-		assertEquals(0, x);
+		assertEquals(0, p.getX());
 	}
 	
 	@Test
 	void testNewPointInZeroY() {
-		Punto p = new Punto();
 		assertEquals(0, p.getY());
 	}
 
 	@Test
 	void testNewPointwithX() {
-		Punto p = new Punto(3, 5);
-		assertEquals(3, p.getX());
+		assertEquals(3, p2.getX());
 	}
 	
 	@Test
 	void testNewPointwithY() {
-		Punto p = new Punto(3, 5);
-		assertEquals(5, p.getY());
+		assertEquals(5, p2.getY());
 	}
 	
 	@Test
 	void testDistance() {
-		Punto p1 = new Punto(0, 0);
-		Punto p2 = new Punto(4, 3);
-		assertEquals(5, p1.distance(p2));
+		assertEquals(5, p.distance(p3));
 	}
 }
 

@@ -6,7 +6,7 @@ public class Punto {
 	private int y;
 	
 	public Punto() {
-		
+		// Constructor por defecto, x e y se inicializan en 0 por eso no hace falta hacerlo
 	}
 	
 	public Punto(int x, int y) {
