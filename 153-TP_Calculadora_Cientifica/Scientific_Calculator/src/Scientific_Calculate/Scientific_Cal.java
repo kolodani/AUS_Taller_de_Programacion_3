@@ -4,26 +4,80 @@ import java.awt.event.*;
 import java.awt.Font;
 import javax.swing.*;
 
-/**
- *
- * @author kolodani
- */
+/*
+    Daniel Alberto Vinzia
+*/
 public class Scientific_Cal extends JFrame {
-    double firstNum;
-    double secondNum;
-    double result;
-    double memory;
-    double numA, numB, numC;
-    boolean seteado[] = { false, false, false };
-    String operation;
-    String answer;
+    /*
+     * Variables
+     */
+    private double firstNum;
+    private double secondNum;
+    private double result;
+    private double memory;
+    private double numA, numB, numC;
+    private boolean seteado[] = { false, false, false };
+    private String operation;
+    private String answer;
+    // componentes
+    private JButton jBtn0;
+    private JButton jBtn1;
+    private JButton jBtn2;
+    private JButton jBtn3;
+    private JButton jBtn4;
+    private JButton jBtn5;
+    private JButton jBtn6;
+    private JButton jBtn7;
+    private JButton jBtn8;
+    private JButton jBtn9;
+    private JButton jBtnA;
+    private JButton jBtnAnswer;
+    private JButton jBtnB;
+    private JButton jBtnBackSpace;
+    private JButton jBtnBin;
+    private JButton jBtnC;
+    private JButton jBtnCA;
+    private JButton jBtnClear;
+    private JButton jBtnCos;
+    private JButton jBtnCosh;
+    private JButton jBtnCubica;
+    private JButton jBtnDiv;
+    private JButton jBtnFactorial;
+    private JButton jBtnHex;
+    private JButton jBtnIgual;
+    private JButton jBtnLn;
+    private JButton jBtnLog;
+    private JButton jBtnMasMenos;
+    private JButton jBtnMulti;
+    private JButton jBtnOctal;
+    private JButton jBtnPi;
+    private JButton jBtnPower;
+    private JButton jBtnPower2;
+    private JButton jBtnPower3;
+    private JButton jBtnPunto;
+    private JButton jBtnResolv;
+    private JButton jBtnResta;
+    private JButton jBtnRund;
+    private JButton jBtnSin;
+    private JButton jBtnSinh;
+    private JButton jBtnSinh1;
+    private JButton jBtnSqrt;
+    private JButton jBtnSuma;
+    private JButton jBtnTan;
+    private JButton jBtnTanh;
+    private JTextField jTxtDisplay;
 
+    /*
+     * Constructor de la clase, instancion la clase de los componentes
+     */
     public Scientific_Cal() {
         initComponents();
     }
 
     private void initComponents() {
-
+        /*
+         * Componentes creados
+         */
         jTxtDisplay = new JTextField();
         jBtn9 = new JButton();
         jBtn7 = new JButton();
@@ -71,6 +125,9 @@ public class Scientific_Cal extends JFrame {
         jBtnC = new JButton();
         jBtnResolv = new JButton();
 
+        /*
+         * Componentes seteados
+         */
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new WindowAdapter() {
             public void windowActivated(WindowEvent evt) {
@@ -451,6 +508,9 @@ public class Scientific_Cal extends JFrame {
             }
         });
 
+        /*
+         * Layout de la calculadora
+         */
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -821,6 +881,9 @@ public class Scientific_Cal extends JFrame {
         pack();
     }
 
+    /*
+     * logica de los componentes
+     */
     private void jBtn9ActionPerformed(ActionEvent evt) {
         String iNum = jTxtDisplay.getText() + jBtn9.getText();
         jTxtDisplay.setText(iNum);
@@ -948,6 +1011,7 @@ public class Scientific_Cal extends JFrame {
     }
 
     private void jBtnClearActionPerformed(ActionEvent evt) {
+        memory = Double.parseDouble(jTxtDisplay.getText());
         jTxtDisplay.setText("");
     }
 
@@ -1151,79 +1215,4 @@ public class Scientific_Cal extends JFrame {
         }
     }
 
-    public static void main(String args[]) {
-        try {
-            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Scientific_Cal.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Scientific_Cal.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Scientific_Cal.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
-        } catch (UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Scientific_Cal.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
-        }
-
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Scientific_Cal().setVisible(true);
-            }
-        });
-    }
-
-    private JButton jBtn0;
-    private JButton jBtn1;
-    private JButton jBtn2;
-    private JButton jBtn3;
-    private JButton jBtn4;
-    private JButton jBtn5;
-    private JButton jBtn6;
-    private JButton jBtn7;
-    private JButton jBtn8;
-    private JButton jBtn9;
-    private JButton jBtnA;
-    private JButton jBtnAnswer;
-    private JButton jBtnB;
-    private JButton jBtnBackSpace;
-    private JButton jBtnBin;
-    private JButton jBtnC;
-    private JButton jBtnCA;
-    private JButton jBtnClear;
-    private JButton jBtnCos;
-    private JButton jBtnCosh;
-    private JButton jBtnCubica;
-    private JButton jBtnDiv;
-    private JButton jBtnFactorial;
-    private JButton jBtnHex;
-    private JButton jBtnIgual;
-    private JButton jBtnLn;
-    private JButton jBtnLog;
-    private JButton jBtnMasMenos;
-    private JButton jBtnMulti;
-    private JButton jBtnOctal;
-    private JButton jBtnPi;
-    private JButton jBtnPower;
-    private JButton jBtnPower2;
-    private JButton jBtnPower3;
-    private JButton jBtnPunto;
-    private JButton jBtnResolv;
-    private JButton jBtnResta;
-    private JButton jBtnRund;
-    private JButton jBtnSin;
-    private JButton jBtnSinh;
-    private JButton jBtnSinh1;
-    private JButton jBtnSqrt;
-    private JButton jBtnSuma;
-    private JButton jBtnTan;
-    private JButton jBtnTanh;
-    private JTextField jTxtDisplay;
 }
