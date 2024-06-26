@@ -396,8 +396,8 @@ public class Scientific_Cal extends JFrame {
             }
         });
 
-        jBtnRund.setFont(new Font("SansSerif", 3, 24));
-        jBtnRund.setText("Rund");
+        jBtnRund.setFont(new Font("SansSerif", 3, 20));
+        jBtnRund.setText("Round");
         jBtnRund.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 jBtnRundActionPerformed(evt);
