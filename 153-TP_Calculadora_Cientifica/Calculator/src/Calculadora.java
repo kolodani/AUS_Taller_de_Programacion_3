@@ -30,12 +30,14 @@ public class Calculadora implements ActionListener {
 
         ventana = new JFrame("Calculadora");
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        ventana.setSize(420, 550);
+        ventana.setSize(1225, 680);
         ventana.setLayout(null);
+        ventana.setResizable(false);
 
         pantalla = new JTextField();
-        pantalla.setBounds(50, 25, 300, 50);
+        pantalla.setBounds(20, 20, 1180, 70);
         pantalla.setFont(new Font("Droid Sans", 1, 48));
+        pantalla.setBackground(Color.WHITE);
         pantalla.setEditable(false);
 
         addButton = new JButton("+");
@@ -107,79 +109,79 @@ public class Calculadora implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        for (int i = 0; i < 10; i++) {
-            if (e.getSource() == numberButtons[i]) {
-                pantalla.setText(pantalla.getText().concat(String.valueOf(i)));
-            }
-        }
+        // for (int i = 0; i < 10; i++) {
+        //     if (e.getSource() == numberButtons[i]) {
+        //         pantalla.setText(pantalla.getText().concat(String.valueOf(i)));
+        //     }
+        // }
 
-        if (e.getSource() == decButton) {
-            pantalla.setText(pantalla.getText().concat("."));
-        }
+        // if (e.getSource() == decButton) {
+        //     pantalla.setText(pantalla.getText().concat("."));
+        // }
 
-        if (e.getSource() == addButton) {
-            num1 = Double.parseDouble(pantalla.getText());
-            operator = '+';
-            pantalla.setText("");
-        }
+        // if (e.getSource() == addButton) {
+        //     num1 = Double.parseDouble(pantalla.getText());
+        //     operator = '+';
+        //     pantalla.setText("");
+        // }
 
-        if (e.getSource() == subButton) {
-            num1 = Double.parseDouble(pantalla.getText());
-            operator = '-';
-            pantalla.setText("");
-        }
+        // if (e.getSource() == subButton) {
+        //     num1 = Double.parseDouble(pantalla.getText());
+        //     operator = '-';
+        //     pantalla.setText("");
+        // }
 
-        if (e.getSource() == mulButton) {
-            num1 = Double.parseDouble(pantalla.getText());
-            operator = '*';
-            pantalla.setText("");
-        }
+        // if (e.getSource() == mulButton) {
+        //     num1 = Double.parseDouble(pantalla.getText());
+        //     operator = '*';
+        //     pantalla.setText("");
+        // }
 
-        if (e.getSource() == divButton) {
-            num1 = Double.parseDouble(pantalla.getText());
-            operator = '/';
-            pantalla.setText("");
-        }
+        // if (e.getSource() == divButton) {
+        //     num1 = Double.parseDouble(pantalla.getText());
+        //     operator = '/';
+        //     pantalla.setText("");
+        // }
 
-        if (e.getSource() == equButton) {
-            num2 = Double.parseDouble(pantalla.getText());
+        // if (e.getSource() == equButton) {
+        //     num2 = Double.parseDouble(pantalla.getText());
 
-            switch (operator) {
-                case '+':
-                    result = num1 + num2;
-                    break;
-                case '-':
-                    result = num1 - num2;
-                    break;
-                case '*':
-                    result = num1 * num2;
-                    break;
-                case '/':
-                    result = num1 / num2;
-                    break;
-            }
+        //     switch (operator) {
+        //         case '+':
+        //             result = num1 + num2;
+        //             break;
+        //         case '-':
+        //             result = num1 - num2;
+        //             break;
+        //         case '*':
+        //             result = num1 * num2;
+        //             break;
+        //         case '/':
+        //             result = num1 / num2;
+        //             break;
+        //     }
 
-            pantalla.setText(String.valueOf(result));
-            num1 = result;
-        }
+        //     pantalla.setText(String.valueOf(result));
+        //     num1 = result;
+        // }
 
-        if (e.getSource() == clrButton) {
-            pantalla.setText("");
-        }
+        // if (e.getSource() == clrButton) {
+        //     pantalla.setText("");
+        // }
 
-        if (e.getSource() == delButton) {
-            String string = pantalla.getText();
-            pantalla.setText("");
-            for (int i = 0; i < string.length() - 1; i++) {
-                pantalla.setText(pantalla.getText() + string.charAt(i));
-            }
-        }
+        // if (e.getSource() == delButton) {
+        //     String string = pantalla.getText();
+        //     pantalla.setText("");
+        //     for (int i = 0; i < string.length() - 1; i++) {
+        //         pantalla.setText(pantalla.getText() + string.charAt(i));
+        //     }
+        // }
 
-        if (e.getSource() == negButton) {
-            double temp = Double.parseDouble(pantalla.getText());
-            temp *= -1;
-            pantalla.setText(String.valueOf(temp));
-        }
+        // if (e.getSource() == negButton) {
+        //     double temp = Double.parseDouble(pantalla.getText());
+        //     temp *= -1;
+        //     pantalla.setText(String.valueOf(temp));
+        // }
     }
 
 }
