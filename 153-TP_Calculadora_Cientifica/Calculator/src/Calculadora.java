@@ -61,7 +61,7 @@ public class Calculadora implements ActionListener {
     private JTextField pantalla;
     private JFrame ventana;
     private JPanel panel;
-    
+
     Font miFuente = new Font("Droid Sans", 1, 24);
     JButton[] botones = new JButton[45];
     JButton[] numeros = new JButton[10];
@@ -89,7 +89,7 @@ public class Calculadora implements ActionListener {
         botones[5] = jBtnSin = new JButton("Sin");
         botones[6] = jBtnTan = new JButton("Tan");
         botones[7] = jBtnMod = new JButton("Mod");
-        botones[8] = jBtnRound = new JButton("R");
+        botones[8] = jBtnRound = new JButton("Round");
         numeros[7] = botones[9] = jBtn7 = new JButton("7");
         numeros[8] = botones[10] = jBtn8 = new JButton("8");
         numeros[9] = botones[11] = jBtn9 = new JButton("9");
@@ -155,74 +155,278 @@ public class Calculadora implements ActionListener {
             }
         }
 
+        if (e.getSource() == jBtnDel) {
+            String bsp = null;
+            if (pantalla.getText().length() > 0) {
+                StringBuilder strB = new StringBuilder(pantalla.getText());
+                strB.deleteCharAt(pantalla.getText().length() - 1);
+                bsp = strB.toString();
+                pantalla.setText(bsp);
+            }
+        }
 
-        // if (e.getSource() == decButton) {
-        //     pantalla.setText(pantalla.getText().concat("."));
-        // }
+        if (e.getSource() == jBtnClr) {
+            memory = Double.parseDouble(pantalla.getText());
+            pantalla.setText("");
+        }
 
-        // if (e.getSource() == addButton) {
-        //     num1 = Double.parseDouble(pantalla.getText());
-        //     operator = '+';
-        //     pantalla.setText("");
-        // }
+        if (e.getSource() == jBtnDot) {
+            if (!pantalla.getText().contains(".")) {
+                pantalla.setText(pantalla.getText() + jBtnDot.getText());
+            }
+        }
 
-        // if (e.getSource() == subButton) {
-        //     num1 = Double.parseDouble(pantalla.getText());
-        //     operator = '-';
-        //     pantalla.setText("");
-        // }
+        if (e.getSource() == jBtnSuma) {
+            firstNum = Double.parseDouble(pantalla.getText());
+            pantalla.setText(null);
+            operation = "+";
+        }
 
-        // if (e.getSource() == mulButton) {
-        //     num1 = Double.parseDouble(pantalla.getText());
-        //     operator = '*';
-        //     pantalla.setText("");
-        // }
+        if (e.getSource() == jBtnResta) {
+            firstNum = Double.parseDouble(pantalla.getText());
+            pantalla.setText(null);
+            operation = "-";
+        }
 
-        // if (e.getSource() == divButton) {
-        //     num1 = Double.parseDouble(pantalla.getText());
-        //     operator = '/';
-        //     pantalla.setText("");
-        // }
+        if (e.getSource() == jBtnMulti) {
+            firstNum = Double.parseDouble(pantalla.getText());
+            pantalla.setText(null);
+            operation = "*";
+        }
 
-        // if (e.getSource() == equButton) {
-        //     num2 = Double.parseDouble(pantalla.getText());
+        if (e.getSource() == jBtnDiv) {
+            firstNum = Double.parseDouble(pantalla.getText());
+            pantalla.setText(null);
+            operation = "/";
+        }
 
-        //     switch (operator) {
-        //         case '+':
-        //             result = num1 + num2;
-        //             break;
-        //         case '-':
-        //             result = num1 - num2;
-        //             break;
-        //         case '*':
-        //             result = num1 * num2;
-        //             break;
-        //         case '/':
-        //             result = num1 / num2;
-        //             break;
-        //     }
+        if (e.getSource() == jBtnIgual) {
+            secondNum = Double.parseDouble(pantalla.getText());
+            switch (operation) {
+                case "+":
+                    result = firstNum + secondNum;
+                    answer = String.format("%.2f", result);
+                    pantalla.setText(answer);
+                    break;
+                case "-":
+                    result = firstNum - secondNum;
+                    answer = String.format("%.2f", result);
+                    pantalla.setText(answer);
+                    break;
+                case "*":
+                    result = firstNum * secondNum;
+                    answer = String.format("%.2f", result);
+                    pantalla.setText(answer);
+                    break;
+                case "/":
+                    result = firstNum / secondNum;
+                    answer = String.format("%.2f", result);
+                    pantalla.setText(answer);
+                    break;
+                case "%":
+                    result = firstNum % secondNum;
+                    answer = String.format("%.2f", result);
+                    pantalla.setText(answer);
+                    break;
+                case "^":
+                    result = Math.pow(firstNum, secondNum);
+                    answer = String.format("%.2f", result);
+                    pantalla.setText(answer);
+                    break;
+                default:
+                    break;
+            }
+            firstNum = result;
+            memory = result;
+            operation = "";
+        }
 
-        //     pantalla.setText(String.valueOf(result));
-        //     num1 = result;
-        // }
+        if (e.getSource() == jBtnCA) {
+            pantalla.setText("");
+            firstNum = 0;
+            secondNum = 0;
+            result = 0;
+            memory = 0;
+            operation = "";
+        }
 
-        // if (e.getSource() == clrButton) {
-        //     pantalla.setText("");
-        // }
+        if (e.getSource() == jBtnPM) {
+            double ops = Double.parseDouble(String.valueOf(pantalla.getText()));
+            ops = ops * (-1);
+            pantalla.setText(String.valueOf(ops));
+        }
 
-        // if (e.getSource() == delButton) {
-        //     String string = pantalla.getText();
-        //     pantalla.setText("");
-        //     for (int i = 0; i < string.length() - 1; i++) {
-        //         pantalla.setText(pantalla.getText() + string.charAt(i));
-        //     }
-        // }
+        if (e.getSource() == jBtnSin) {
+            double ops = Double.parseDouble(String.valueOf(pantalla.getText()));
+            ops = Math.toRadians(ops);
+            ops = Math.sin(ops);
+            answer = String.format("%.2f", ops);
+            pantalla.setText(answer);
+        }
 
-        // if (e.getSource() == negButton) {
-        //     double temp = Double.parseDouble(pantalla.getText());
-        //     temp *= -1;
-        //     pantalla.setText(String.valueOf(temp));
-        // }
+        if (e.getSource() == jBtnTan) {
+            double ops = Double.parseDouble(String.valueOf(pantalla.getText()));
+            ops = Math.toRadians(ops);
+            ops = Math.tan(ops);
+            answer = String.format("%.2f", ops);
+            pantalla.setText(answer);
+        }
+
+        if (e.getSource() == jBtnSinH) {
+            double ops = Double.parseDouble(String.valueOf(pantalla.getText()));
+            ops = Math.toRadians(ops);
+            ops = Math.sinh(ops);
+            answer = String.format("%.2f", ops);
+            pantalla.setText(answer);
+        }
+
+        if (e.getSource() == jBtnFacto) {
+            double ops = Double.parseDouble(String.valueOf(pantalla.getText()));
+            result = 1.0;
+            while (ops > 1) {
+                result = result * ops;
+                ops--;
+            }
+            pantalla.setText(String.valueOf(result));
+        }
+
+        if (e.getSource() == jBtnLn) {
+            double ops = Double.parseDouble(String.valueOf(pantalla.getText()));
+            ops = Math.log(ops);
+            pantalla.setText(String.valueOf(ops));
+        }
+
+        if (e.getSource() == jBtnLog) {
+            double ops = Double.parseDouble(String.valueOf(pantalla.getText()));
+            ops = Math.log10(ops);
+            pantalla.setText(String.valueOf(ops));
+        }
+
+        if (e.getSource() == jBtnCub) {
+            double ops = Double.parseDouble(String.valueOf(pantalla.getText()));
+            ops = Math.pow(ops, 3.0);
+            pantalla.setText(String.valueOf(ops));
+        }
+
+        if (e.getSource() == jBtnEleva) {
+            firstNum = Double.parseDouble(pantalla.getText());
+            pantalla.setText(null);
+            operation = "^";
+        }
+
+        if (e.getSource() == jBtnRCub) {
+            double ops = Double.parseDouble(String.valueOf(pantalla.getText()));
+            ops = Math.cbrt(ops);
+            pantalla.setText(String.valueOf(ops));
+        }
+
+        if (e.getSource() == jBtnMod) {
+            firstNum = Double.parseDouble(pantalla.getText());
+            pantalla.setText(null);
+            operation = "%";
+        }
+
+        if (e.getSource() == jBtnBin) {
+            int a = Integer.parseInt(pantalla.getText());
+            pantalla.setText(Integer.toString(a, 2));
+        }
+
+        if (e.getSource() == jBtnOctal) {
+            int a = Integer.parseInt(pantalla.getText());
+            pantalla.setText(Integer.toString(a, 8));
+        }
+
+        if (e.getSource() == jBtnHexa) {
+            int a = Integer.parseInt(pantalla.getText());
+            pantalla.setText(Integer.toString(a, 16));
+        }
+
+        if (e.getSource() == jBtnCosH) {
+            double ops = Double.parseDouble(String.valueOf(pantalla.getText()));
+            ops = Math.toRadians(ops);
+            ops = Math.cosh(ops);
+            answer = String.format("%.2f", ops);
+            pantalla.setText(answer);
+        }
+
+        if (e.getSource() == jBtnCos) {
+            double ops = Double.parseDouble(String.valueOf(pantalla.getText()));
+            ops = Math.toRadians(ops);
+            ops = Math.cos(ops);
+            answer = String.format("%.2f", ops);
+            pantalla.setText(answer);
+        }
+
+        if (e.getSource() == jBtnRCuad) {
+            double ops = Double.parseDouble(String.valueOf(pantalla.getText()));
+            ops = Math.sqrt(ops);
+            pantalla.setText(String.valueOf(ops));
+        }
+
+        if (e.getSource() == jBtnPi) {
+            double ops = Math.PI;
+            pantalla.setText(String.valueOf(ops));
+        }
+
+        if (e.getSource() == jBtnAns) {
+            pantalla.setText(String.valueOf(memory));
+        }
+
+        if (e.getSource() == jBtnCuad) {
+            double ops = Double.parseDouble(String.valueOf(pantalla.getText()));
+            ops = Math.pow(ops, 2.0);
+            pantalla.setText(String.valueOf(ops));
+        }
+
+        if (e.getSource() == jBtnTanH) {
+            double ops = Double.parseDouble(String.valueOf(pantalla.getText()));
+            ops = Math.toRadians(ops);
+            ops = Math.tanh(ops);
+            answer = String.format("%.2f", ops);
+            pantalla.setText(answer);
+        }
+
+        if (e.getSource() == jBtnRound) {
+            double ops = Double.parseDouble(String.valueOf(pantalla.getText()));
+            long a = Math.round(ops);
+            pantalla.setText(String.valueOf(a));
+        }
+
+        if (e.getSource() == jBtnA) {
+            numA = Double.parseDouble(pantalla.getText());
+            seteado[0] = true;
+            pantalla.setText(null);
+        }
+
+        if (e.getSource() == jBtnB) {
+            numB = Double.parseDouble(pantalla.getText());
+            seteado[1] = true;
+            pantalla.setText(null);
+        }
+
+        if (e.getSource() == jBtnC) {
+            numC = Double.parseDouble(pantalla.getText());
+            seteado[2] = true;
+            pantalla.setText(null);
+        }
+
+        if (e.getSource() == jBtnResol) {
+            double radicando, x1, x2;
+            if (seteado[0] && seteado[1] && seteado[2]) {
+                if (numA == 0.0) {
+                    pantalla.setText("Ecuacion no cuadratica");
+                } else {
+                    radicando = Math.sqrt((Math.pow(numB, 2.0)) - (4.0 * numA * numC));
+                    x1 = ((-numB) + radicando) / (2 * numA);
+                    x2 = ((-numB) - radicando) / (2 * numA);
+                    pantalla.setText(String.valueOf(x1) + " " + String.valueOf(x2));
+                }
+            } else {
+                pantalla.setText("Falta setear variables");
+            }
+            for (int i = 0; i < 2; i++) {
+                seteado[i] = false;
+            }
+        }
     }
-
 }
