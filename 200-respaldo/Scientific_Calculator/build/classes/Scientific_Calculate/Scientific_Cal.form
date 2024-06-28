@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <Events>
+    <EventHandler event="windowActivated" listener="WindowListener" parameters="WindowEvent" handler="formWindowActivated"/>
+  </Events>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jBtn7" min="-2" pref="70" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jBtn8" min="-2" pref="70" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jBtn9" min="-2" pref="70" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jBtnResta" min="-2" pref="70" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jBtnPi" min="-2" pref="100" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jBtnCos" min="-2" pref="100" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                              <Component id="jBtnCosh" min="-2" pref="100" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jBtn0" min="-2" pref="70" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jBtnPunto" min="-2" pref="70" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jBtnMasMenos" min="-2" pref="70" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jBtnIgual" min="-2" pref="70" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jBtnPower3" min="-2" pref="100" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jBtnBin" min="-2" pref="100" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                              <Component id="jBtnHex" min="-2" pref="100" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jBtnBackSpace" min="-2" pref="70" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jBtnClear" min="-2" pref="70" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jBtnCA" min="-2" pref="70" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jBtnSuma" min="-2" pref="70" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jBtnLog" min="-2" pref="100" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jBtnSin" min="-2" pref="100" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                              <Component id="jBtnSinh" min="-2" pref="100" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jBtn4" min="-2" pref="70" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="jBtn5" min="-2" pref="70" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="jBtn6" min="-2" pref="70" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="jBtnMulti" min="-2" pref="70" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jBtn1" min="-2" pref="70" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="jBtn2" min="-2" pref="70" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="jBtn3" min="-2" pref="70" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="jBtnDiv" min="-2" pref="70" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jBtnPower2" min="-2" pref="100" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="jBtnLn" min="-2" pref="100" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                      <Component id="jBtnRund" min="-2" pref="100" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jBtnSqrt" min="-2" pref="100" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="jBtnTan" min="-2" pref="100" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                      <Component id="jBtnTanh" min="-2" pref="100" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jBtnAnswer" min="-2" pref="100" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jBtnA" min="-2" pref="98" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jBtnOctal" min="-2" pref="100" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jBtnResolv" min="-2" pref="98" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jBtnSinh1" min="-2" pref="100" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jBtnCubica" min="-2" pref="100" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jBtnPower" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="jBtnFactorial" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jBtnC" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
+                                  <Component id="jBtnB" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
+                      <Component id="jTxtDisplay" min="-2" pref="718" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="20" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jTxtDisplay" min="-2" pref="62" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jBtnSinh1" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtnCubica" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jBtnAnswer" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtnA" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jBtnFactorial" min="-2" pref="70" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jBtnPower" min="-2" pref="70" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="jBtnB" min="-2" pref="70" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jBtnC" min="-2" pref="70" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jBtnOctal" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtnResolv" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jBtnBackSpace" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtnClear" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtnCA" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtnSuma" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtnSinh" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtnSin" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtnLog" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jBtn7" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtn8" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtn9" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtnResta" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtnCosh" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtnCos" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtnPi" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jBtn4" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtn5" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtn6" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtnMulti" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtnTanh" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtnTan" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtnSqrt" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jBtn1" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtn2" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtn3" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtnDiv" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtnRund" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtnLn" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtnPower2" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jBtn0" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtnPunto" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtnMasMenos" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtnIgual" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtnHex" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtnBin" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jBtnPower3" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="34" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="JTextField" name="jTxtDisplay">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="36" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jTxtDisplayActionPerformed"/>
+        <EventHandler event="keyTyped" listener="KeyListener" parameters="KeyEvent" handler="jTxtDisplayKeyTyped"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtn9">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="9"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtn9ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtn7">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="7"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtn7ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtn8">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="8"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtn8ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnResta">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="-"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnRestaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtn4">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="4"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtn4ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtn5">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="5"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtn5ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtn6">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="6"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtn6ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnMulti">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="*"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnMultiActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtn1">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="1"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtn1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtn2">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="2"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtn2ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtn3">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="3"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtn3ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnDiv">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="/"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnDivActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtn0">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtn0ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnPunto">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="."/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnPuntoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnMasMenos">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&#xb1;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnMasMenosActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnIgual">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="="/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnIgualActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnBackSpace">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&#x2190;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnBackSpaceActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnClear">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="C"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnClearActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnCA">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="CA"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnCAActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnSuma">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="+"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnSumaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnSinh">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Sinh"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnSinhActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnSin">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Sin"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnSinActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnLog">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Log"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnLogActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnPi">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Pi"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnPiActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnCos">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Cos"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnCosActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnCosh">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Cosh"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnCoshActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnTanh">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Tanh"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnTanhActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnTan">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Tan"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnTanActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnSqrt">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="2&#x221a;x"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnSqrtActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnPower2">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="x^2"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnPower2ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnLn">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ln"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnLnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnRund">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Rund"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnRundActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnPower3">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="x^3"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnPower3ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnBin">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Bin"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnBinActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnHex">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Hex"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnHexActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnSinh1">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Mod"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnSinh1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnAnswer">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ans"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnAnswerActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnFactorial">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="x!"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnFactorialActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnPower">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="x^y"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnPowerActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnOctal">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Octal"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnOctalActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnCubica">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="3&#x221a;x"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnCubicaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnA">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="a"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnAActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnB">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="b"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnBActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnC">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="c"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnCActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="JButton" name="jBtnResolv">
+      <Properties>
+        <Property name="font" type="Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Resol"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="ActionListener" parameters="ActionEvent" handler="jBtnResolvActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>
