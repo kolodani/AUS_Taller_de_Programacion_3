@@ -51,7 +51,7 @@ public class Calculadora implements ActionListener {
 
     Calculadora() {
         // SETEO DE LA VENTANA
-        ventana = new JFrame("Calculadora");
+        ventana = new JFrame("Calculadora por Daniel Vinzia");
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.setSize(1225, 680);
         ventana.setLayout(null);
@@ -81,7 +81,7 @@ public class Calculadora implements ActionListener {
         botones[14] = trigonometria[4] = jBtnSinH = new JButton("Sinh");
         botones[15] = trigonometria[5] = jBtnTanH = new JButton("Tanh");
         botones[16] = sistemaNumerico[0] = jBtnBin = new JButton("Bin");
-        botones[17] = jBtnA = new JButton("a");
+        botones[17] = letras[0] = jBtnA = new JButton("a");
         botones[18] = numeros[4] = jBtn4 = new JButton("4");
         botones[19] = numeros[5] = jBtn5 = new JButton("5");
         botones[20] = numeros[6] = jBtn6 = new JButton("6");
@@ -227,29 +227,30 @@ public class Calculadora implements ActionListener {
                     default:
                         break;
                 }
-                pantalla.setText(null);
             }
         }
         // BOTONES a, b, c
         for (int i = 0; i < letras.length; i++) {
-            auxiliar = letras[i].getText();
-            switch (auxiliar) {
-                case "a":
-                    numA = Double.parseDouble(pantalla.getText());
-                    seteado[0] = true;
-                    break;
-                case "b":
-                    numB = Double.parseDouble(pantalla.getText());
-                    seteado[1] = true;
-                    break;
-                case "c":
-                    numC = Double.parseDouble(pantalla.getText());
-                    seteado[2] = true;
-                    break;
-                default:
-                    break;
+            if (e.getSource() == letras[i]) {
+                auxiliar = letras[i].getText();
+                switch (auxiliar) {
+                    case "a":
+                        numA = Double.parseDouble(pantalla.getText());
+                        seteado[0] = true;
+                        break;
+                    case "b":
+                        numB = Double.parseDouble(pantalla.getText());
+                        seteado[1] = true;
+                        break;
+                    case "c":
+                        numC = Double.parseDouble(pantalla.getText());
+                        seteado[2] = true;
+                        break;
+                    default:
+                        break;
+                }
+                pantalla.setText("");
             }
-            pantalla.setText(null);
         }
         // BOTON IGUAL =
         if (e.getSource() == jBtnIgual) {
