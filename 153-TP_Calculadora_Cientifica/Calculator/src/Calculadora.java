@@ -7,8 +7,8 @@ public class Calculadora implements ActionListener {
     private double firstNum;
     private double secondNum;
     private double result;
-    private double memory;
     private double numA, numB, numC;
+    private double ops;
     // ARREGLO PARA LA RESOLVENTE
     private boolean seteado[] = { false, false, false };
     // CADENAS PARA GUARDAR VALORES DE LOGICA
@@ -48,6 +48,8 @@ public class Calculadora implements ActionListener {
     private JPanel panel;
     // FUENTE DONDE DE LOS BOTONES
     private Font miFuente = new Font("Droid Sans", 1, 24);
+    // CLASE PARA MANIPULAR EL ARCHIVO DE LAS RESPUESTAS
+    private Archivo respuestas;
 
     Calculadora() {
         // SETEO DE LA VENTANA
@@ -126,7 +128,12 @@ public class Calculadora implements ActionListener {
         ventana.add(panel);
         ventana.add(pantalla);
         ventana.setVisible(true);
+        // CREACION DE ARCHIVO DE RESPUESTAS
+        respuestas = new Archivo();
+        // BORRADO DEL ARCHIVO PARA EMPEZAR DESDE CERO CON LA MEMORIA DEL ARCHIVO
+        respuestas.borrarArchivo();
     }
+
     // LOGICA DE LA INTERECCION CON LA CALCULADORA
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -147,7 +154,7 @@ public class Calculadora implements ActionListener {
         // BOTONES cos, sin, tan, cosh, sinh, tanh
         for (int i = 0; i < trigonometria.length; i++) {
             if (e.getSource() == trigonometria[i]) {
-                double ops = Double.parseDouble(String.valueOf(pantalla.getText()));
+                ops = Double.parseDouble(String.valueOf(pantalla.getText()));
                 ops = Math.toRadians(ops);
                 auxiliar = trigonometria[i].getText();
                 switch (auxiliar) {
@@ -174,12 +181,13 @@ public class Calculadora implements ActionListener {
                 }
                 answer = String.format("%.2f", ops);
                 pantalla.setText(answer);
+                respuestas.escribirArchivo(answer);
             }
         }
         // BOTONES Round, Ln, Log, x^2, x^3, 2√x, 3√x
         for (int i = 0; i < operaciones.length; i++) {
             if (e.getSource() == operaciones[i]) {
-                double ops = Double.parseDouble(String.valueOf(pantalla.getText()));
+                ops = Double.parseDouble(String.valueOf(pantalla.getText()));
                 auxiliar = operaciones[i].getText();
                 switch (auxiliar) {
                     case "Round":
@@ -206,7 +214,9 @@ public class Calculadora implements ActionListener {
                     default:
                         break;
                 }
-                pantalla.setText(String.valueOf(ops));
+                answer = String.format("%.2f", ops);
+                pantalla.setText(answer);
+                respuestas.escribirArchivo(answer);
             }
         }
         // BOTONES Bin, Octal, Hexa
@@ -216,17 +226,21 @@ public class Calculadora implements ActionListener {
                 auxiliar = sistemaNumerico[i].getText();
                 switch (auxiliar) {
                     case "Bin":
-                        pantalla.setText(Integer.toString(a, 2));
+                        answer = "2x" + Integer.toString(a, 2);
+                        pantalla.setText(answer);
                         break;
                     case "Octal":
-                        pantalla.setText(Integer.toString(a, 8));
+                        answer = "8x" + Integer.toString(a, 8);
+                        pantalla.setText(answer);
                         break;
                     case "Hexa":
-                        pantalla.setText(Integer.toString(a, 16));
+                        answer = "0x" + Integer.toString(a, 16);
+                        pantalla.setText(answer);
                         break;
                     default:
                         break;
                 }
+                respuestas.escribirArchivo(answer);
             }
         }
         // BOTONES a, b, c
@@ -249,6 +263,8 @@ public class Calculadora implements ActionListener {
                     default:
                         break;
                 }
+                answer = pantalla.getText();
+                respuestas.escribirArchivo(answer);
                 pantalla.setText("");
             }
         }
@@ -284,18 +300,20 @@ public class Calculadora implements ActionListener {
                     break;
             }
             firstNum = result;
-            memory = result;
             operation = "";
+            respuestas.escribirArchivo(answer);
         }
         // BOTON Factotial
         if (e.getSource() == jBtnFacto) {
-            double ops = Double.parseDouble(String.valueOf(pantalla.getText()));
+            ops = Double.parseDouble(String.valueOf(pantalla.getText()));
             result = 1.0;
             while (ops > 1) {
                 result = result * ops;
                 ops--;
             }
-            pantalla.setText(String.valueOf(result));
+            answer = String.valueOf(result);
+            respuestas.escribirArchivo(answer);
+            pantalla.setText(answer);
         }
         // BOTON Resolvente
         if (e.getSource() == jBtnResol) {
@@ -307,6 +325,10 @@ public class Calculadora implements ActionListener {
                     radicando = Math.sqrt((Math.pow(numB, 2.0)) - (4.0 * numA * numC));
                     x1 = ((-numB) + radicando) / (2 * numA);
                     x2 = ((-numB) - radicando) / (2 * numA);
+                    answer = String.valueOf(x1);
+                    respuestas.escribirArchivo(answer);
+                    answer = String.valueOf(x2);
+                    respuestas.escribirArchivo(answer);
                     pantalla.setText(String.valueOf(x1) + " " + String.valueOf(x2));
                 }
             } else {
@@ -328,7 +350,6 @@ public class Calculadora implements ActionListener {
         }
         // BOTON CLEAR
         if (e.getSource() == jBtnClr) {
-            memory = Double.parseDouble(pantalla.getText());
             pantalla.setText("");
         }
         // BOTON PUNTO
@@ -348,7 +369,6 @@ public class Calculadora implements ActionListener {
             firstNum = 0;
             secondNum = 0;
             result = 0;
-            memory = 0;
             operation = "";
         }
         // BOTON MAS/MENOS +/-
@@ -359,7 +379,8 @@ public class Calculadora implements ActionListener {
         }
         // BOTON Ans
         if (e.getSource() == jBtnAns) {
-            pantalla.setText(String.valueOf(memory));
+            auxiliar = respuestas.leerArchivo();
+            pantalla.setText(auxiliar);
         }
     }
 }
