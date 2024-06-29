@@ -3,17 +3,19 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Calculadora implements ActionListener {
-
+    // VARIABLES PARA LA LOGICA
     private double firstNum;
     private double secondNum;
     private double result;
     private double memory;
     private double numA, numB, numC;
+    // ARREGLO PARA LA RESOLVENTE
     private boolean seteado[] = { false, false, false };
+    // CADENAS PARA GUARDAR VALORES DE LOGICA
     private String operation;
     private String answer;
     private String auxiliar;
-
+    // BOTONES DE LA CALCULADORA AGRUPADOS POR FUNCIONES SIMILARES DE LOGICA
     private JButton jBtn0, jBtn1, jBtn2, jBtn3, jBtn4, jBtn5, jBtn6, jBtn7, jBtn8, jBtn9;
     private JButton jBtnA, jBtnB, jBtnC;
     private JButton jBtnCos, jBtnCosH, jBtnSin, jBtnSinH, jBtnTan, jBtnTanH;
@@ -30,101 +32,102 @@ public class Calculadora implements ActionListener {
     private JButton jBtnPM;
     private JButton jBtnPi;
     private JButton jBtnResol;
-
+    // ARREGLOS DE BOTONES PARA LAYOUT Y PARA LOGICA DE LOS MISMOS
     private JButton[] botones = new JButton[45];
-    private JButton[] numeros = new JButton[10];
-    private JButton[] signos = new JButton[6];
-    private JButton[] trigonometria = new JButton[6];
-    private JButton[] operaciones = new JButton[7];
-    private JButton[] sistemaNumerico = new JButton[3];
     private JButton[] letras = new JButton[3];
-
+    private JButton[] numeros = new JButton[10];
+    private JButton[] operaciones = new JButton[7];
+    private JButton[] signos = new JButton[6];
+    private JButton[] sistemaNumerico = new JButton[3];
+    private JButton[] trigonometria = new JButton[6];
+    // PANTALLA DONDE SE VEN NUMEROS Y RESULTADOS
     private JTextField pantalla;
+    // VENTANA QUE REPRESENTA LA CALCULADORA
     private JFrame ventana;
+    // PANEL DONDE VAN TODAS LAS TECLAS
     private JPanel panel;
-
+    // FUENTE DONDE DE LOS BOTONES
     private Font miFuente = new Font("Droid Sans", 1, 24);
 
     Calculadora() {
-
+        // SETEO DE LA VENTANA
         ventana = new JFrame("Calculadora");
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.setSize(1225, 680);
         ventana.setLayout(null);
         ventana.setResizable(false);
-
+        // SETEO DE LA PANTALLA
         pantalla = new JTextField();
         pantalla.setBounds(20, 20, 1180, 70);
         pantalla.setFont(new Font("Droid Sans", 1, 48));
         pantalla.setBackground(Color.WHITE);
         pantalla.setEditable(false);
         pantalla.setHorizontalAlignment(JTextField.RIGHT);
-
+        // CREACION DE LOS BOTONES Y ALMACENADOS EN ARREGLOS
         botones[0] = jBtnDel = new JButton("Del");
         botones[1] = jBtnClr = new JButton("C");
         botones[2] = jBtnCA = new JButton("CA");
-        signos[0] = botones[3] = jBtnSuma = new JButton("+");
-        trigonometria[0] = botones[4] = jBtnCos = new JButton("Cos");
-        trigonometria[1] = botones[5] = jBtnSin = new JButton("Sin");
-        trigonometria[2] = botones[6] = jBtnTan = new JButton("Tan");
-        signos[4] = botones[7] = jBtnMod = new JButton("Mod");
-        operaciones[0] = botones[8] = jBtnRound = new JButton("Round");
-        numeros[7] = botones[9] = jBtn7 = new JButton("7");
-        numeros[8] = botones[10] = jBtn8 = new JButton("8");
-        numeros[9] = botones[11] = jBtn9 = new JButton("9");
-        signos[1] = botones[12] = jBtnResta = new JButton("-");
-        trigonometria[3] = botones[13] = jBtnCosH = new JButton("Cosh");
-        trigonometria[4] = botones[14] = jBtnSinH = new JButton("Sinh");
-        trigonometria[5] = botones[15] = jBtnTanH = new JButton("Tanh");
-        sistemaNumerico[0] = botones[16] = jBtnBin = new JButton("Bin");
+        botones[3] = signos[0] = jBtnSuma = new JButton("+");
+        botones[4] = trigonometria[0] = jBtnCos = new JButton("Cos");
+        botones[5] = trigonometria[1] = jBtnSin = new JButton("Sin");
+        botones[6] = trigonometria[2] = jBtnTan = new JButton("Tan");
+        botones[7] = signos[4] = jBtnMod = new JButton("Mod");
+        botones[8] = operaciones[0] = jBtnRound = new JButton("Round");
+        botones[9] = numeros[7] = jBtn7 = new JButton("7");
+        botones[10] = numeros[8] = jBtn8 = new JButton("8");
+        botones[11] = numeros[9] = jBtn9 = new JButton("9");
+        botones[12] = signos[1] = jBtnResta = new JButton("-");
+        botones[13] = trigonometria[3] = jBtnCosH = new JButton("Cosh");
+        botones[14] = trigonometria[4] = jBtnSinH = new JButton("Sinh");
+        botones[15] = trigonometria[5] = jBtnTanH = new JButton("Tanh");
+        botones[16] = sistemaNumerico[0] = jBtnBin = new JButton("Bin");
         botones[17] = jBtnA = new JButton("a");
-        numeros[4] = botones[18] = jBtn4 = new JButton("4");
-        numeros[5] = botones[19] = jBtn5 = new JButton("5");
-        numeros[6] = botones[20] = jBtn6 = new JButton("6");
-        signos[2] = botones[21] = jBtnMulti = new JButton("*");
+        botones[18] = numeros[4] = jBtn4 = new JButton("4");
+        botones[19] = numeros[5] = jBtn5 = new JButton("5");
+        botones[20] = numeros[6] = jBtn6 = new JButton("6");
+        botones[21] = signos[2] = jBtnMulti = new JButton("*");
         botones[22] = jBtnPi = new JButton("Pi");
-        operaciones[1] = botones[23] = jBtnLn = new JButton("Ln");
-        operaciones[2] = botones[24] = jBtnLog = new JButton("Log");
-        sistemaNumerico[1] = botones[25] = jBtnOctal = new JButton("Octal");
-        letras[1] = botones[26] = jBtnB = new JButton("b");
-        numeros[1] = botones[27] = jBtn1 = new JButton("1");
-        numeros[2] = botones[28] = jBtn2 = new JButton("2");
-        numeros[3] = botones[29] = jBtn3 = new JButton("3");
-        signos[3] = botones[30] = jBtnDiv = new JButton("/");
-        operaciones[3] = botones[31] = jBtnCuad = new JButton("x^2");
-        operaciones[4] = botones[32] = jBtnCub = new JButton("x^3");
-        signos[5] = botones[33] = jBtnEleva = new JButton("x^y");
-        sistemaNumerico[2] = botones[34] = jBtnHexa = new JButton("Hexa");
-        letras[2] = botones[35] = jBtnC = new JButton("c");
-        numeros[0] = botones[36] = jBtn0 = new JButton("0");
+        botones[23] = operaciones[1] = jBtnLn = new JButton("Ln");
+        botones[24] = operaciones[2] = jBtnLog = new JButton("Log");
+        botones[25] = sistemaNumerico[1] = jBtnOctal = new JButton("Octal");
+        botones[26] = letras[1] = jBtnB = new JButton("b");
+        botones[27] = numeros[1] = jBtn1 = new JButton("1");
+        botones[28] = numeros[2] = jBtn2 = new JButton("2");
+        botones[29] = numeros[3] = jBtn3 = new JButton("3");
+        botones[30] = signos[3] = jBtnDiv = new JButton("/");
+        botones[31] = operaciones[3] = jBtnCuad = new JButton("x^2");
+        botones[32] = operaciones[4] = jBtnCub = new JButton("x^3");
+        botones[33] = signos[5] = jBtnEleva = new JButton("x^y");
+        botones[34] = sistemaNumerico[2] = jBtnHexa = new JButton("Hexa");
+        botones[35] = letras[2] = jBtnC = new JButton("c");
+        botones[36] = numeros[0] = jBtn0 = new JButton("0");
         botones[37] = jBtnDot = new JButton(".");
         botones[38] = jBtnPM = new JButton("+/-");
         botones[39] = jBtnIgual = new JButton("=");
-        operaciones[5] = botones[40] = jBtnRCuad = new JButton("2√x");
-        operaciones[6] = botones[41] = jBtnRCub = new JButton("3√x");
+        botones[40] = operaciones[5] = jBtnRCuad = new JButton("2√x");
+        botones[41] = operaciones[6] = jBtnRCub = new JButton("3√x");
         botones[42] = jBtnFacto = new JButton("x!");
         botones[43] = jBtnAns = new JButton("Ans");
         botones[44] = jBtnResol = new JButton("Resol");
-
+        // SETEO DE BOTONES
         for (int i = 0; i < botones.length; i++) {
             botones[i].setFont(miFuente);
             botones[i].setFocusable(false);
             botones[i].addActionListener(this);
         }
-
+        // SETEO DEL LAYOUT DE LOS BOTONES EN EL PANEL
         panel = new JPanel();
         panel.setBounds(20, 100, 1180, 520);
         panel.setLayout(new GridLayout(5, 9, 20, 20));
-
+        // AGREGO LOS COMPONENTES A LA VENTANA Y SETEO LA MISMA
         for (int i = 0; i < botones.length; i++) {
             panel.add(botones[i]);
         }
-
         ventana.add(panel);
         ventana.add(pantalla);
         ventana.setVisible(true);
     }
-
+    // LOGICA DE LA INTERECCION CON LA CALCULADORA
     @Override
     public void actionPerformed(ActionEvent e) {
         // BOTONES DEL 0 AL 9
@@ -172,86 +175,6 @@ public class Calculadora implements ActionListener {
                 answer = String.format("%.2f", ops);
                 pantalla.setText(answer);
             }
-        }
-        // BOTON DELETE
-        if (e.getSource() == jBtnDel) {
-            String bsp = null;
-            if (pantalla.getText().length() > 0) {
-                StringBuilder strB = new StringBuilder(pantalla.getText());
-                strB.deleteCharAt(pantalla.getText().length() - 1);
-                bsp = strB.toString();
-                pantalla.setText(bsp);
-            }
-        }
-        // BOTON CLEAR
-        if (e.getSource() == jBtnClr) {
-            memory = Double.parseDouble(pantalla.getText());
-            pantalla.setText("");
-        }
-        // BOTON PUNTO
-        if (e.getSource() == jBtnDot) {
-            if (!pantalla.getText().contains(".")) {
-                pantalla.setText(pantalla.getText() + jBtnDot.getText());
-            }
-        }
-        // BOTON Pi
-        if (e.getSource() == jBtnPi) {
-            double ops = Math.PI;
-            pantalla.setText(String.valueOf(ops));
-        }
-        // BOTON CLEAR ALL
-        if (e.getSource() == jBtnCA) {
-            pantalla.setText("");
-            firstNum = 0;
-            secondNum = 0;
-            result = 0;
-            memory = 0;
-            operation = "";
-        }
-        // BOTON MAS/MENOS +/-
-        if (e.getSource() == jBtnPM) {
-            double ops = Double.parseDouble(String.valueOf(pantalla.getText()));
-            ops = ops * (-1);
-            pantalla.setText(String.valueOf(ops));
-        }
-        // BOTON Ans
-        if (e.getSource() == jBtnAns) {
-            pantalla.setText(String.valueOf(memory));
-        }
-        // BOTON IGUAL =
-        if (e.getSource() == jBtnIgual) {
-            secondNum = Double.parseDouble(pantalla.getText());
-            switch (operation) {
-                case "+":
-                    result = firstNum + secondNum;
-                    pantalla.setText(answer = String.format("%.2f", result));
-                    break;
-                case "-":
-                    result = firstNum - secondNum;
-                    pantalla.setText(answer = String.format("%.2f", result));
-                    break;
-                case "*":
-                    result = firstNum * secondNum;
-                    pantalla.setText(answer = String.format("%.2f", result));
-                    break;
-                case "/":
-                    result = firstNum / secondNum;
-                    pantalla.setText(answer = String.format("%.2f", result));
-                    break;
-                case "Mod":
-                    result = firstNum % secondNum;
-                    pantalla.setText(answer = String.format("%.2f", result));
-                    break;
-                case "x^y":
-                    result = Math.pow(firstNum, secondNum);
-                    pantalla.setText(answer = String.format("%.2f", result));
-                    break;
-                default:
-                    break;
-            }
-            firstNum = result;
-            memory = result;
-            operation = "";
         }
         // BOTONES Round, Ln, Log, x^2, x^3, 2√x, 3√x
         for (int i = 0; i < operaciones.length; i++) {
@@ -307,16 +230,6 @@ public class Calculadora implements ActionListener {
                 pantalla.setText(null);
             }
         }
-        // BOTON Factotial
-        if (e.getSource() == jBtnFacto) {
-            double ops = Double.parseDouble(String.valueOf(pantalla.getText()));
-            result = 1.0;
-            while (ops > 1) {
-                result = result * ops;
-                ops--;
-            }
-            pantalla.setText(String.valueOf(result));
-        }
         // BOTONES a, b, c
         for (int i = 0; i < letras.length; i++) {
             auxiliar = letras[i].getText();
@@ -338,6 +251,51 @@ public class Calculadora implements ActionListener {
             }
             pantalla.setText(null);
         }
+        // BOTON IGUAL =
+        if (e.getSource() == jBtnIgual) {
+            secondNum = Double.parseDouble(pantalla.getText());
+            switch (operation) {
+                case "+":
+                    result = firstNum + secondNum;
+                    pantalla.setText(answer = String.format("%.2f", result));
+                    break;
+                case "-":
+                    result = firstNum - secondNum;
+                    pantalla.setText(answer = String.format("%.2f", result));
+                    break;
+                case "*":
+                    result = firstNum * secondNum;
+                    pantalla.setText(answer = String.format("%.2f", result));
+                    break;
+                case "/":
+                    result = firstNum / secondNum;
+                    pantalla.setText(answer = String.format("%.2f", result));
+                    break;
+                case "Mod":
+                    result = firstNum % secondNum;
+                    pantalla.setText(answer = String.format("%.2f", result));
+                    break;
+                case "x^y":
+                    result = Math.pow(firstNum, secondNum);
+                    pantalla.setText(answer = String.format("%.2f", result));
+                    break;
+                default:
+                    break;
+            }
+            firstNum = result;
+            memory = result;
+            operation = "";
+        }
+        // BOTON Factotial
+        if (e.getSource() == jBtnFacto) {
+            double ops = Double.parseDouble(String.valueOf(pantalla.getText()));
+            result = 1.0;
+            while (ops > 1) {
+                result = result * ops;
+                ops--;
+            }
+            pantalla.setText(String.valueOf(result));
+        }
         // BOTON Resolvente
         if (e.getSource() == jBtnResol) {
             double radicando, x1, x2;
@@ -356,6 +314,51 @@ public class Calculadora implements ActionListener {
             for (int i = 0; i < 2; i++) {
                 seteado[i] = false;
             }
+        }
+        // BOTON DELETE
+        if (e.getSource() == jBtnDel) {
+            String bsp = null;
+            if (pantalla.getText().length() > 0) {
+                StringBuilder strB = new StringBuilder(pantalla.getText());
+                strB.deleteCharAt(pantalla.getText().length() - 1);
+                bsp = strB.toString();
+                pantalla.setText(bsp);
+            }
+        }
+        // BOTON CLEAR
+        if (e.getSource() == jBtnClr) {
+            memory = Double.parseDouble(pantalla.getText());
+            pantalla.setText("");
+        }
+        // BOTON PUNTO
+        if (e.getSource() == jBtnDot) {
+            if (!pantalla.getText().contains(".")) {
+                pantalla.setText(pantalla.getText() + jBtnDot.getText());
+            }
+        }
+        // BOTON Pi
+        if (e.getSource() == jBtnPi) {
+            double ops = Math.PI;
+            pantalla.setText(String.valueOf(ops));
+        }
+        // BOTON CLEAR ALL
+        if (e.getSource() == jBtnCA) {
+            pantalla.setText("");
+            firstNum = 0;
+            secondNum = 0;
+            result = 0;
+            memory = 0;
+            operation = "";
+        }
+        // BOTON MAS/MENOS +/-
+        if (e.getSource() == jBtnPM) {
+            double ops = Double.parseDouble(String.valueOf(pantalla.getText()));
+            ops = ops * (-1);
+            pantalla.setText(String.valueOf(ops));
+        }
+        // BOTON Ans
+        if (e.getSource() == jBtnAns) {
+            pantalla.setText(String.valueOf(memory));
         }
     }
 }
