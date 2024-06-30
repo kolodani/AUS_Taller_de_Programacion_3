@@ -390,7 +390,9 @@ public class Calculadora implements ActionListener {
         }
         // BOTON Ans
         if (e.getSource() == jBtnAns) {
-            arregloRespuestas = respuestas.leerArchivo();
+            if (masAns == 0) {
+                arregloRespuestas = respuestas.leerArchivo();
+            }
             auxiliar = arregloRespuestas.get(cantidad - (1 + masAns));
             pantalla.setText(auxiliar);
             masAns++;
