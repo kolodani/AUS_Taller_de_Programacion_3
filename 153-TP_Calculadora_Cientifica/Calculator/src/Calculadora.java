@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public class Calculadora implements ActionListener {
     // VARIABLES PARA LA LOGICA
@@ -9,6 +10,9 @@ public class Calculadora implements ActionListener {
     private double result;
     private double numA, numB, numC;
     private double ops;
+    private int cantidad = 0;
+    private int masAns = 0;
+    private ArrayList<String> arregloRespuestas;
     // ARREGLO PARA LA RESOLVENTE
     private boolean seteado[] = { false, false, false };
     // CADENAS PARA GUARDAR VALORES DE LOGICA
@@ -181,7 +185,8 @@ public class Calculadora implements ActionListener {
                 }
                 answer = String.format("%.2f", ops);
                 pantalla.setText(answer);
-                respuestas.escribirArchivo(answer);
+                cantidad = respuestas.escribirArchivo(answer, cantidad);
+                masAns = 0;
             }
         }
         // BOTONES Round, Ln, Log, x^2, x^3, 2√x, 3√x
@@ -216,7 +221,8 @@ public class Calculadora implements ActionListener {
                 }
                 answer = String.format("%.2f", ops);
                 pantalla.setText(answer);
-                respuestas.escribirArchivo(answer);
+                cantidad = respuestas.escribirArchivo(answer, cantidad);
+                masAns = 0;
             }
         }
         // BOTONES Bin, Octal, Hexa
@@ -240,7 +246,8 @@ public class Calculadora implements ActionListener {
                     default:
                         break;
                 }
-                respuestas.escribirArchivo(answer);
+                cantidad = respuestas.escribirArchivo(answer, cantidad);
+                masAns = 0;
             }
         }
         // BOTONES a, b, c
@@ -264,7 +271,8 @@ public class Calculadora implements ActionListener {
                         break;
                 }
                 answer = pantalla.getText();
-                respuestas.escribirArchivo(answer);
+                cantidad = respuestas.escribirArchivo(answer, cantidad);
+                masAns = 0;
                 pantalla.setText("");
             }
         }
@@ -301,7 +309,8 @@ public class Calculadora implements ActionListener {
             }
             firstNum = result;
             operation = "";
-            respuestas.escribirArchivo(answer);
+            cantidad = respuestas.escribirArchivo(answer, cantidad);
+            masAns = 0;
         }
         // BOTON Factotial
         if (e.getSource() == jBtnFacto) {
@@ -312,7 +321,8 @@ public class Calculadora implements ActionListener {
                 ops--;
             }
             answer = String.valueOf(result);
-            respuestas.escribirArchivo(answer);
+            cantidad = respuestas.escribirArchivo(answer, cantidad);
+            masAns = 0;
             pantalla.setText(answer);
         }
         // BOTON Resolvente
@@ -326,9 +336,10 @@ public class Calculadora implements ActionListener {
                     x1 = ((-numB) + radicando) / (2 * numA);
                     x2 = ((-numB) - radicando) / (2 * numA);
                     answer = String.valueOf(x1);
-                    respuestas.escribirArchivo(answer);
+                    cantidad = respuestas.escribirArchivo(answer, cantidad);
                     answer = String.valueOf(x2);
-                    respuestas.escribirArchivo(answer);
+                    cantidad = respuestas.escribirArchivo(answer, cantidad);
+                    masAns = 0;
                     pantalla.setText(String.valueOf(x1) + " " + String.valueOf(x2));
                 }
             } else {
@@ -379,8 +390,10 @@ public class Calculadora implements ActionListener {
         }
         // BOTON Ans
         if (e.getSource() == jBtnAns) {
-            auxiliar = respuestas.leerArchivo();
+            arregloRespuestas = respuestas.leerArchivo();
+            auxiliar = arregloRespuestas.get(cantidad - (1 + masAns));
             pantalla.setText(auxiliar);
+            masAns++;
         }
     }
 }
